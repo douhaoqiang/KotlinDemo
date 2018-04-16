@@ -8,10 +8,12 @@ import com.dhq.kotlindemo.R
 
 abstract class BaseActivity : AppCompatActivity() {
 
+    var content: FrameLayout? = null;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base);
-        var content = findViewById(R.id.fl_base_content) as FrameLayout;
+        content = findViewById(R.id.fl_base_content);
         LayoutInflater.from(this).inflate(getLayoutId(), content)
 
         initView();
